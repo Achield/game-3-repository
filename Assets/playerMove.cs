@@ -6,7 +6,7 @@ public class playerMove : MonoBehaviour
 {
     public bool debugs = true;
     Rigidbody rb;
-    float speed = 10f;
+    float speed = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,21 +21,24 @@ public class playerMove : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rb.AddForce(Direction(debugs) * speed);
+        Vector3 wishDir = transform.TransformDirection(Direction(debugs));
+        rb.AddForce(wishDir * speed);
     }
 
     Vector3 Direction(bool debugs)
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        Debug.Log("raw input: " + h + " . " + v);
         Vector3 dir = new Vector3(h, 0, v);
 
         if (debugs)
         {
+            Vector3 temp = transform.TransformDirection(dir);
             Debug.DrawRay(transform.position, rb.velocity, Color.yellow);
-            Debug.Log("vector: " + dir);
-            Debug.DrawRay(transform.position, dir * 2f, Color.white);
+            // Debug.Log("vector: " + dir);
+            Debug.DrawRay(transform.position, temp * 2f, Color.white);
+            Debug.DrawRay(transform.position + Vector3.up, transform.forward, Color.green);
+            Debug.DrawRay(transform.position + Vector3.up, transform.right, Color.green);
         }
         return dir;
     }
