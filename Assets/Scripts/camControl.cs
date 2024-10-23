@@ -51,7 +51,7 @@ public class camControl : MonoBehaviour
         float roX = Input.GetAxisRaw("Mouse X");
         dLook = new Vector3(roX, roY, 0);
 
-        if (dLook != Vector3.zero) { Debug.Log("Delta look: " + dLook); }
+        //if (dLook != Vector3.zero) { Debug.Log("Delta look: " + dLook); }
 
         if (onStartTimer < 1f) // This smooths out camera jump on start of game
         {
