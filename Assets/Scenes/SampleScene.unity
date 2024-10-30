@@ -1510,12 +1510,12 @@ GameObject:
   - component: {fileID: 819113975}
   - component: {fileID: 819113974}
   - component: {fileID: 819113973}
-  - component: {fileID: 819113972}
   - component: {fileID: 819113971}
   - component: {fileID: 819113970}
   - component: {fileID: 819113969}
   - component: {fileID: 819113968}
   - component: {fileID: 819113976}
+  - component: {fileID: 819113977}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -1588,19 +1588,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &819113972
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819113967}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &819113973
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1684,6 +1671,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionTransform: {fileID: 1738467192}
+--- !u!135 &819113977
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819113967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,7 +3501,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632969996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40934d038e0b3034db382b30310c71a7, type: 3}
   m_Name: 
